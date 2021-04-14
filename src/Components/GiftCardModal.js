@@ -16,7 +16,8 @@ export default function GiftCardModal({ amoutCardId, isOpen, onClose }) {
     function handleSave() {
         console.log('amoutCardId', amoutCardId);
         console.log('Brand Selected', brandSelected);
-        onClose();
+        handleClose();
+        setBrandSelectd(undefined);
     };
 
     const styledDialogContent = {
@@ -31,6 +32,11 @@ export default function GiftCardModal({ amoutCardId, isOpen, onClose }) {
         setBrandSelectd(brandId)
     }
 
+    function handleClose() {
+        onClose();
+        setBrandSelectd(undefined);
+    }
+
     return (
         <Dialog open={isOpen} >
             <DialogContent style={styledDialogContent}>
@@ -40,7 +46,7 @@ export default function GiftCardModal({ amoutCardId, isOpen, onClose }) {
                 <BrandGift imageUrl={imageUrl} id={4} brandSelected={brandSelected} onSelect={handleSelect} />
             </DialogContent>
             <DialogActions>
-                <Button onClick={onClose}>Cancel</Button>
+                <Button onClick={handleClose}>Cancel</Button>
                 <Button
                     onClick={handleSave}
                     color="primary"
