@@ -8,10 +8,11 @@ export default function BrandGift({ id, imageUrl, brandSelected, onSelect }) {
     let styleSelected = { margin: 5, cursor: 'pointer' }
     if (brandSelected === id) {
         styleSelected = {
-            ...styleSelected,
+            cursor: 'pointer',
             borderStyle: 'solid',
             borderColor: 'green',
-            borderWidth: '1px'
+            borderWidth: '1px',
+            margin: 4,
         }
     }
 
