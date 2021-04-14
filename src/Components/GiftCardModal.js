@@ -16,7 +16,7 @@ export default function GiftCardModal({ amoutCardId, isOpen, onClose }) {
     function handleSave() {
         console.log('amoutCardId', amoutCardId);
         console.log('Brand Selected', brandSelected);
-        onClose();ç
+        onClose();
     };
 
     const styledDialogContent = {
